@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "features/achordion.h"
+#include "features/caps_word.h"
 
 enum layers {
   _CLM = 0,
@@ -184,6 +185,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (!process_achordion(keycode, record)) {
     return false;
   }
+  if (!process_caps_word(keycode, record)) {return false;}
   update_swapper(&alt_tab_active, KC_LALT, KC_TAB, ALT_TAB, ALT_SFT_TAB,
                  &sft_grv_active, keycode, record);
   update_swapper(&sft_grv_active, KC_LALT, KC_GRV, ALT_SFT_TAB, ALT_TAB,
