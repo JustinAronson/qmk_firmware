@@ -84,7 +84,7 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-    [_CLM] = LAYOUT(
+    [_CLM] = LAYOUT_split_3x6_3(
      KC_TAB  , KC_Q ,  KC_W   ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J , KC_L   ,  KC_U  ,   KC_Y ,KC_SCLN, XXXXXXX,
      KC_ESC  ,HOME_A,  HOME_R , HOME_S ,  HOME_T,  KC_G,                                         KC_M, HOME_N ,HOME_E  ,HOME_I  ,HOME_O , KC_QUOT,
      XXXXXXX , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V ,                                      KC_K ,   KC_H ,KC_COMM , KC_DOT ,KC_SLSH, XXXXXXX,
@@ -92,51 +92,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 
-    [_RSTHD] = LAYOUT(
+    [_RSTHD] = LAYOUT_split_3x6_3(
      KC_TAB  ,XXXXXXX,KC_C    ,KC_Y    ,KC_F    ,KC_K	 ,                                       KC_Z  , KC_L   ,KC_Q    ,KC_U    ,XXXXXXX, XXXXXXX,
      KC_ESC  ,RSTH_R ,RSTH_S  ,RSTH_T  ,RSTH_H  ,RSTH_D  ,                                       RSTH_M,RSTH_N  ,RSTH_A  ,RSTH_I  ,RSTH_O , KC_QUOT,
-     XXXXXXX ,KC_J   ,KC_V    ,KC_G    ,KC_P    ,KC_B    ,XXXXXXX,XXXXXXX,    XXXXXXX, XXXXXXX,  KC_X  ,KC_W    ,KC_COMM ,KC_DOT  ,KC_SLSH, XXXXXXX,
-                               XXXXXXX ,XXXXXXX ,R_BSPC  ,R_E    ,DEL    ,      ENTER, SPACE  ,XXXXXXX ,XXXXXXX ,XXXXXXX
+     XXXXXXX ,KC_J   ,KC_V    ,KC_G    ,KC_P    ,KC_B    ,  KC_X  ,KC_W    ,KC_COMM ,KC_DOT  ,KC_SLSH, XXXXXXX,
+                               R_BSPC  ,R_E    ,DEL    ,      ENTER, SPACE  ,XXXXXXX
     ),
 
 
-    [_NAV] = LAYOUT(
+    [_NAV] = LAYOUT_split_3x6_3(
      _______ , _______, _______, _______, _______, _______,                                     _______, _______, KC_HOME, KC_END , _______, KC_F12,
      ALT_TAB ,  O_GUI , O_LALT ,  O_SFT ,  O_CTL ,  O_RALT,                                     KC_LEFT, KC_DOWN, KC_UP  ,KC_RIGHT, _______, KC_F11,
-  ALT_SFT_TAB,KC_UNDO , KC_CUT , KC_COPY,KC_PASTE, KC_PSCR, _______, _______, _______, _______, _______, KC_PGDN,KC_PGUP ,_______ , _______, KC_F10,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+  ALT_SFT_TAB,KC_UNDO , KC_CUT , KC_COPY,KC_PASTE, KC_PSCR,                                     _______, KC_PGDN,KC_PGUP ,_______ , _______, KC_F10,
+                                 _______, _______, _______,                                     _______, _______, _______
     ),
 
 
-    [_SYM] = LAYOUT(
+    [_SYM] = LAYOUT_split_3x6_3(
      _______ , KC_QUOT, KC_LABK, KC_RABK, KC_DQUO, KC_GRV ,                                     KC_AMPR, KC_UNDS, KC_LBRC, KC_RBRC, KC_PERC, _______,
      KC_TAB  , KC_EXLM, KC_MINS, KC_PLUS, KC_EQL , KC_HASH,                                     KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO,
-     SFT_TAB , KC_CIRC, KC_SLSH, KC_ASTR, KC_BSLS, KC_AT,   _______, _______, _______, _______, KC_TILD, KC_DLR , KC_LCBR, KC_RCBR, KC_QUES, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+     SFT_TAB , KC_CIRC, KC_SLSH, KC_ASTR, KC_BSLS, KC_AT,                                       KC_TILD, KC_DLR , KC_LCBR, KC_RCBR, KC_QUES, _______,
+                                 _______, _______, _______, _______, _______, _______
     ),
 
 
-    [_NUM] = LAYOUT(
+    [_NUM] = LAYOUT_split_3x6_3(
 	 _______ , _______, _______, _______, _______, _______,                                     _______, KC_7   , KC_8    , KC_9   , _______, _______,
 	 CT_TAB  , O_GUI  , O_LALT ,  O_SFT ,  O_CTL ,  O_RALT,                                     _______, KC_4   , KC_5    , KC_6   , KC_0   , _______,
-   CT_SFT_TAB, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_1   , KC_2    , KC_3   , _______, _______,
-					             _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+   CT_SFT_TAB, _______, _______, _______, _______, _______,                                     _______, KC_1   , KC_2    , KC_3   , _______, _______,
+					             _______, _______, _______, _______, _______, _______
     ),
 
 
-    [_FUN] = LAYOUT(
+    [_FUN] = LAYOUT_split_3x6_3(
 	 QK_BOOT,KC_COLEMAK,KC_RSTHD, _______, _______, _______,                                     _______, KC_F7  , KC_F8   , KC_F9  , KC_F12 , KC_F15,
 	 _______  ,KC_LGUI , O_LALT , O_SFT  ,  O_CTL , O_RALT ,                                     _______, KC_F4  , KC_F5   , KC_F6  , KC_F11 , KC_F14,
-	 _______  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_F1  , KC_F2   , KC_F3  , KC_F10 , KC_F13,
-                                  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+	 _______  , _______, _______, _______, _______, _______,                                     _______, KC_F1  , KC_F2   , KC_F3  , KC_F10 , KC_F13,
+                                  _______, _______, _______,  _______, _______, _______
     ),
 
 
-    [_ADJ] = LAYOUT(
+    [_ADJ] = LAYOUT_split_3x6_3(
 	 _______  ,LCTL(KC_1),LCTL(KC_2), LCTL(KC_3),LCTL(KC_4),LCTL(KC_5),                         LCTL(KC_6),LCTL(KC_7),LCTL(KC_8),LCTL(KC_9),LCTL(KC_0), _______,
 	 _______  ,LALT(KC_1),LALT(KC_2),LALT(KC_3),LALT(KC_4),LALT(KC_5),                          LALT(KC_6),LALT(KC_7),LALT(KC_8),LALT(KC_9),LALT(KC_0), _______,
-	 _______  ,_______   ,_______   ,_______, _______, _______, _______, _______, _______, _______, _______, _______, _______ ,_______ ,_______, _______,
-        					         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+	 _______  ,_______   ,_______   ,_______, _______, _______, _______, _______, _______ ,_______ ,_______, _______,
+        					         _______, _______, _______,  _______, _______, _______
         )
 
 };
