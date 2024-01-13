@@ -1,5 +1,4 @@
 ENCODER_ENABLE = no       # Disable the use of one or more encoders
 SRC += features/achordion.c
-SRC += feaatures/caps_word.c
-CAPS_WORD_ENABLE = no
+CAPS_WORD_ENABLE = yes
 CONSOLE_ENABLE = no         # Console for debug
