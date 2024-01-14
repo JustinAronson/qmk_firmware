@@ -13,14 +13,14 @@ enum layers {
 
 #define HOME_R LALT_T(KC_R)
 #define HOME_S LSFT_T(KC_S)
-#define HOME_T LCTL_T(KC_T)
-#define HOME_N RCTL_T(KC_N)
+#define HOME_T LGUI_T(KC_T)
+#define HOME_N RGUI_T(KC_N)
 #define HOME_E RSFT_T(KC_E)
 #define HOME_I LALT_T(KC_I)
-#define HOME_A LGUI_T(KC_A)
+#define HOME_A LCTL_T(KC_A)
 #define HOME_G RALT_T(KC_G)
 #define HOME_M RALT_T(KC_M)
-#define HOME_O RGUI_T(KC_O)
+#define HOME_O RCTL_T(KC_O)
 
 // Home row mods for number layer.
 #define NUM_1 LGUI_T(KC_1)
