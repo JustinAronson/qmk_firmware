@@ -300,7 +300,7 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
   }
 
   // Also allow same-hand holds when the tap_hold_key belongs to thumb cluster
-  if (tap_hold_record->event.key.row == 7 ||
+  if ((tap_hold_record->event.key.row == 7 && tap_hold_record->event.key.col != 2) ||
       tap_hold_record->event.key.row == 3) {
     return true;
   }
